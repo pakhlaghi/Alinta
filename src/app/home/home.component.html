@@ -1,0 +1,8 @@
+<div *ngFor="let movie of movies">
+    <div class="actor">{{movie.actor}}</div>
+    <ul>
+        <li class="character" *ngFor="let item of movie.obj">
+            {{item.name}}
+        </li>
+    </ul>
+</div>

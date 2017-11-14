@@ -1,0 +1,9 @@
+{
+    "/api/*": {
+        "target": "https://alintacodingtest.azurewebsites.net",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug",
+        "pathRewrite": { "^/proxy": "" }
+    }
+}
