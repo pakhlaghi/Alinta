@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   }
 
   private flatObj(response: Movie[]) {
-    return _.uniqWith(_.flatMap(response, function (rsp) {
+    return _.orderBy(_.uniqWith(_.flatMap(response, function (rsp) {
       return _.map(rsp.roles, function (role) {
         return {
           movie: rsp.name,
@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
           name: role.name
         };
       });
-    }), _.isEqual);
+    }), _.isEqual), ['movie']);
   }
 
   private groupBy(fm) {
